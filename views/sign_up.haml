@@ -1,0 +1,30 @@
+%form{:action => "/users/sign_up", :method => "post"}
+  %label{:name => "fname"} First Name
+  %input{:type => "text", :name => "fname"}
+
+  %label{:name => "lname"} Last Name
+  %input{:type => "text", :name => "lname"}
+
+  %label{:name => "username"} Username
+  %input{:type => "text", :name => "username"}
+
+  %label{:name => "bio"} Bio
+  %textarea{:name => "bio", :placeholder => "Enter your bio here."} 
+
+  %label{:name => "email"} Email
+  %input{:type => "text", :name => "email"}
+
+  %label{:name => "url"} URL
+  %input{:type => "text", :name => "url"}
+
+  %label{:name => "city"} City
+  %input{:type => "text", :name => "city"}
+
+  %label{:name => "state"} State
+  %input{:type => "text", :name => "state"}
+
+  %br
+
+  %input{:type => "submit", :class => "btn"}
+
+  

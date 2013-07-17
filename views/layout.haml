@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Fake Twitter &copy;
+    %link{:href => "/bootstrap.min.css", :type => "text/css", :rel => "stylesheet"}
+    %link{:href => "/bootstrap-responsive.min.css", :type => "text/css", :rel => "stylesheet"}
+  %body
+    .row
+      .span8.offset2
+        %h1 Welcome to Fake Twitter &copy;
+        -if !params[:alert].nil?
+          =params[:alert]
+        %ul.nav.nav-pills
+          %li
+            %a{:href => "/"} Home
+          %li
+            %a{:href => "/users/sign_up"} Sign Up
+      .span10.offset2
+        =yield

@@ -1,0 +1,26 @@
+%h1=@user.full_name
+
+%h3 Bio
+=@user.bio
+
+%h3 URL
+%a{:href => @user.url, :target => "_new"}=@user.url
+
+%h3 Location
+%a{:href => "https://maps.google.com/maps?q=#{URI.escape(@user.location)}", :target => "_new"}=@user.location
+
+%br
+%h3 Tweets
+-@user.tweets.each do |tweet|
+  -if !tweet.text.nil?
+    =tweet.text
+    .text{:style => "font-size: 10px"}
+      =tweet.created_at.strftime("%b %e, %l:%M %p")
+    %br
+
+%h3 New Tweet
+%form{:action => "/users/#{@user.id.to_s}/tweets/new", :method => :post}
+  %label{:name => "tweet"} Tweet
+  %textarea{:name => "tweet", :placeholder => "Write your tweet here."}
+  %br
+  %input{:type => "submit", :class => "btn"}

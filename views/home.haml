@@ -1,0 +1,4 @@
+%h3 Users:
+-@users.each do |user|
+  %a{:href => "/users/#{user.id}"}=user.full_name
+  %br
