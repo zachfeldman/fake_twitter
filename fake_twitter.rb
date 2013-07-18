@@ -52,4 +52,10 @@ get '/users/:id' do
   haml :profile
 end
 
+get '/news_feed' do 
+  @tweets = Tweet.all
+  @user = User.where(:id => Tweet.where(params[:user_id]))
+  haml :news_feed
+end
+
 
