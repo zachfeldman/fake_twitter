@@ -2,3 +2,5 @@
 -@users.each do |user|
   %a{:href => "/users/#{user.id}"}=user.full_name
   %br
+
+=current_user.full_name if !current_user.nil?
