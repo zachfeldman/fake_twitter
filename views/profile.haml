@@ -3,6 +3,19 @@
 %h3 Bio
 =@user.bio
 
+%br
+%br
+%h4
+  %a{href: "/follow/#{@user.id}"} Follow this user
+%br
+
+
+-if !@user.followeds.empty?
+  %h3 This user is following
+  -@user.followeds.each do |follow|
+    %a{href: "/users/#{follow.id}"}=follow.full_name
+    %br
+
 %h3 URL
 %a{:href => @user.url, :target => "_new"}=@user.url
 
